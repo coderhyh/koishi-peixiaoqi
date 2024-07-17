@@ -1,0 +1,128 @@
+plugins:
+  group:server:
+    $collapsed: true
+    server:7duhwz:
+      port: 5140
+      maxPort: 5149
+    ~server-satori:xd8wn9: {}
+    ~server-temp:0zulrz: {}
+  group:basic:
+    $collapsed: true
+    ~admin:ejm83h: {}
+    ~bind:2fp02n: {}
+    commands:eisfl9:
+      messagecounter.排行榜:
+        aliases:
+          排行榜: null
+          看谁壁画多: null
+      messagecounter.群排行榜:
+        aliases:
+          群排行榜: null
+    help:ohufsc: {}
+    http:c3cc9w: {}
+    ~inspect:xi18pm: {}
+    locales:6gr4xu: {}
+    proxy-agent:or6jk0:
+      proxyAgent: socks://127.0.0.1:7890
+    rate-limit:432qhh: {}
+    telemetry:90d8q0: {}
+  group:console:
+    $collapsed: true
+    actions:7geflz: {}
+    analytics:oiroqm: {}
+    android:vadviu:
+      $if: env.KOISHI_AGENT?.includes('Android')
+    ~auth:ir0uw5: {}
+    config:cmgahl: {}
+    console:h3acwu:
+      open: true
+    dataview:m4l3xv: {}
+    desktop:hsmdj9:
+      $if: env.KOISHI_AGENT?.includes('Desktop')
+    explorer:q82p91: {}
+    logger:hqprrw: {}
+    insight:i8748j: {}
+    market:7fnfe3:
+      search:
+        endpoint: https://registry.koishi.t4wefan.pub/index.json
+    notifier:jgi0e2: {}
+    oobe:v7qdo4: {}
+    sandbox:98ih27: {}
+    status:ppcyuw: {}
+    theme-vanilla:frlckm: {}
+  group:storage:
+    $collapsed: true
+    ~database-mongo:k09mox:
+      database: koishi
+    ~database-mysql:0hymuq:
+      database: koishi
+    ~database-postgres:l1pyeg:
+      database: koishi
+    database-sqlite:ilvpeb:
+      path: data/koishi.db
+    assets-local:vqor34: {}
+  group:adapter:
+    $collapsed: true
+    ~adapter-dingtalk:7ru13t: {}
+    ~adapter-discord:m19slt: {}
+    ~adapter-kook:vjv0kv: {}
+    ~adapter-lark:54pn2g: {}
+    ~adapter-line:y5yspx: {}
+    ~adapter-mail:ka7i7z: {}
+    ~adapter-matrix:r9350d: {}
+    ~adapter-qq:ezknk1: {}
+    ~adapter-satori:9zfayt: {}
+    ~adapter-slack:4xq2e9: {}
+    ~adapter-telegram:cadc9j: {}
+    ~adapter-wechat-official:c82m3d: {}
+    ~adapter-wecom:fc15lt: {}
+    ~adapter-whatsapp:ppyztv: {}
+    ~adapter-zulip:dvs4hm: {}
+  group:develop:
+    $collapsed: true
+    $if: env.NODE_ENV === 'development'
+    hmr:99u4am:
+      root: .
+  packages:h65i5l: {}
+  grass-group-friends:51t9cs:
+    coolDown: 10
+    toggleCoolDown: 10
+  adapter-onebot:hi101o:
+    selfId: '206499354'
+  cache-database:x1jsj2: {}
+  chatluna:l3rc3w:
+    botName: 佩小琪
+    isReplyWithAt: true
+    privateChatWithoutCommand: true
+    defaultModel: openai/gpt-3.5-turbo
+    defaultPreset: catgirl
+  chatluna-openai-adapter:5evycf:
+    apiKeys:
+      - - sk-KobCy0y6RrT1e5wS123b7a5932Ce4b39988f3197Fa4eF2F0
+        - https://openkey.cloud/v1
+  ~chatluna-search-service:kf9m8v:
+    searchEngine: serper
+    serperApiKey: b3116db34d3fe68ad78697808aace2dd34d41b37
+  waifu:x7jr41:
+    onlyActiveUser: true
+    activeDays: 3
+    forceMarry: true
+  re-driftbottle:r4ukxz:
+    manager:
+      - '772567615'
+    path: data/re-driftbottle
+    minInterval: 30
+    maxInterval: 120
+    localSource: true
+  message-counter:dv4u5y:
+    isYesterdayCommentRankingDisabled: true
+    defaultMaxDisplayCount: 10
+    autoPush: true
+    shouldSendDailyLeaderboardAtMidnight: false
+    dailyScheduledTimers:
+      - '10:00'
+      - '11:00'
+      - '15:00'
+      - '17:00'
+  ~markdown-to-image-service:smoywp: {}
+  ~puppeteer:u00eqs: {}
