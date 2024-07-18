@@ -26,10 +26,10 @@ export default function (ctx: Context) {
     .action(async ({ session }, ...content) => {
       reqAudio(session, content, 'dinzheng')
     })
-  ctx.command('东雪莲 <content:string>', '示例：东雪莲 内容')
-    .action(async ({ session }, ...content) => {
-      reqAudio(session, content, 'dongxuelian')
-    })
+  // ctx.command('东雪莲 <content:string>', '示例：东雪莲 内容')
+  //   .action(async ({ session }, ...content) => {
+  //     reqAudio(session, content, 'dongxuelian')
+  //   })
   ctx.command('懒羊羊 <content:string>', '示例：懒羊羊 内容')
     .action(async ({ session }, ...content) => {
       reqAudio(session, content, 'lanyangyang')

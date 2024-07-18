@@ -81,6 +81,26 @@ export default function (ctx: Context) {
       }
       return h.image('https://api.qtkj.love/api/zt.php?msg=' + text)
     })
+  ctx.command('喜报', '示例：喜报 内容')
+    .action(async ({ session }, text) => {
+      if (!text?.length) {
+        return '请输入内容'
+      }
+      if (text.length > 25) {
+        return '内容过长'
+      }
+      return h.image('https://api.qtkj.love/api/bx.php?msg=' + text)
+    })
+  ctx.command('悲报', '示例：悲报 内容')
+    .action(async ({ session }, text) => {
+      if (!text?.length) {
+        return '请输入内容'
+      }
+      if (text.length > 25) {
+        return '内容过长'
+      }
+      return h.image('https://api.qtkj.love/api/emote_beibao.php?msg=' + text)
+    })
   ctx.command('qq评估')
     .action(async ({ session }) => {
       session.onebot.sendGroupMsg(session.guildId, [

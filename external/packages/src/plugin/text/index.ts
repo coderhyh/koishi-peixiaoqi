@@ -38,6 +38,10 @@ export default function (ctx: Context) {
     .action(async ({ session }) => {
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=2694562449] 下头狗`)
     })
+  ctx.guild('796522033').command('管理员')
+    .action(async ({ session }) => {
+      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=676220020] 狗群主 快给[CQ:at,qq=${session.event.user.id}]管理员`);
+    })
   ctx.guild('796522033', '436984426', '745893769').command('大海')
     .action(async ({ session }) => {
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=2259660294] 两眼一条缝，外八小胡子，右嘴一颗痣，手拿爱疯15，张嘴八系，闭嘴拆迁`)
@@ -45,6 +49,8 @@ export default function (ctx: Context) {
   ctx.command('骂 <at>', '示例：骂 @某人')
     .action(async ({ session }, user) => {
       const self = session.event.user.id
+      // session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${self}] 近期骂人被举报，我要文明发言！不过你可以骂自己`)
+      // return
       const target = user?.match(/\d+/g)?.[0]
       if (!target) {
         session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${self}] 请@某人重新来～`)
@@ -53,28 +59,28 @@ export default function (ctx: Context) {
       const res = await axios.get('https://api.oddfar.com/yl/q.php?c=1009&encode=text').then(r => r.data)
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${target}] ${res}`)
     })
-  ctx.command('点歌 <music:string>', '示例：点歌 鸡你太美')
-    .action(async ({ session }, musicName) => {
-      try {
-        const music = musicName.trim()
-        if (!music) return '请输入歌名再来'
-        const res = await axios.get(`https://api.qtkj.love/api/qq_music.php?msg=${music}&n=1`).then(r => r.data)
-        console.log('点歌: ', music, ': ', res);
-        if (res.status === 'success') {
-          const r = await axios.get(res.url, { responseType: 'stream' }).then(r => r.data)
-          const fileName = new Date().getTime() + '.mp3'
-          const localAudioPath = resolve(__dirname, fileName)
-          const writer = fs.createWriteStream(localAudioPath);
-          r.pipe(writer);
-          await new Promise(resolve => writer.on('finish', resolve));
-          // return h.audio(pathToFileURL(localAudioPath).href)
-          session.onebot.uploadGroupFile(session.guildId, localAudioPath, `${music}-${res.singer}.mp3`)
-            .finally(() => fs.unlinkSync(localAudioPath))
-        } else return '点歌失败'
-      } catch (error) {
-        return '点歌失败'
-      }
-    })
+  // ctx.command('点歌 <music:string>', '示例：点歌 鸡你太美')
+  //   .action(async ({ session }, musicName) => {
+  //     try {
+  //       const music = musicName.trim()
+  //       if (!music) return '请输入歌名再来'
+  //       const res = await axios.get(`https://api.qtkj.love/api/qq_music.php?msg=${music}&n=1`).then(r => r.data)
+  //       console.log('点歌: ', music, ': ', res);
+  //       if (res.status === 'success') {
+  //         const r = await axios.get(res.url, { responseType: 'stream' }).then(r => r.data)
+  //         const fileName = new Date().getTime() + '.mp3'
+  //         const localAudioPath = resolve(__dirname, fileName)
+  //         const writer = fs.createWriteStream(localAudioPath);
+  //         r.pipe(writer);
+  //         await new Promise(resolve => writer.on('finish', resolve));
+  //         // return h.audio(pathToFileURL(localAudioPath).href)
+  //         session.onebot.uploadGroupFile(session.guildId, localAudioPath, `${music}-${res.singer}.mp3`)
+  //           .finally(() => fs.unlinkSync(localAudioPath))
+  //       } else return '点歌失败'
+  //     } catch (error) {
+  //       return '点歌失败'
+  //     }
+  //   })
   ctx.command('抽签')
     .action(async ({ session }) => {
       try {
