@@ -3,7 +3,7 @@ import axios from 'axios'
 import fs from 'fs'
 import {resolve} from 'path'
 
-const baseUrl = 'https://api.qtkj.love/api/spjx.php?msg='
+const baseUrl = 'https://qtkj.love/api/spjx.php?msg='
 const reg = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g
 
 export default function(ctx: Context) {

@@ -7,7 +7,7 @@ const reqAudio = async (session: Session, content: string[], name: string) => {
     if (!content.length) {
       return '请输入内容'
     }
-    const res = await axios.get(`https://api.qtkj.love/api/AI_Speaker/?speaker=${name}&message=${content.join(' ')}`)
+    const res = await axios.get(`https://qtkj.love/api/AI_Speaker/?speaker=${name}&message=${content.join(' ')}`)
       .then(r => r.data)
     if (res.code === 200) {
       console.log(content.join(' '), res.data.url);

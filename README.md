@@ -10,3 +10,7 @@ pnpm dev
 ## Koishi 使用教程文档
 
 <https://koishi.chat/manual/starter/boilerplate.html>
+
+ai涩涩
+node_modules/koishi-plugin-novelai/lib/index.js 1157
+\+ guildId: session.guildId

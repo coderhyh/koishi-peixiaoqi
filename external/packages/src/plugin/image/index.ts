@@ -15,25 +15,25 @@ export default function (ctx: Context) {
       const fileName = acgImg[Math.floor(Math.random() * acgImg.length)]
       return h.image(pathToFileURL(`${acgUrl}/${fileName}`).href)
     })
-  ctx.command('随机白丝')
-    .action(async ({ session }) => {
-      return h.image('https://api.qtkj.love/api/bsmntp.php')
-    })
+  // ctx.command('随机白丝')
+  //   .action(async ({ session }) => {
+  //     return h.image('https://qtkj.love/api/bsmntp.php')
+  //   })
   ctx.command('随机jk')
     .action(async ({ session }) => {
-      return h.image('https://api.qtkj.love/api/mnjkt.php')
+      return h.image('https://qtkj.love/api/mnjkt.php')
     })
-  ctx.command('随机黑丝')
-    .action(async ({ session }) => {
-      return h.image('https://api.qtkj.love/api/hs.php')
-    })
+  // ctx.command('随机黑丝')
+  //   .action(async ({ session }) => {
+  //     return h.image('https://qtkj.love/api/hs.php')
+  //   })
   ctx.command('随机cos')
     .action(async ({ session }) => {
-      return h.image('https://api.qtkj.love/api/Cosplay.php')
+      return h.image('https://qtkj.love/api/Cosplay.php')
     })
   ctx.command('随机幼图')
     .action(async ({ session }) => {
-      return h.image('https://api.qtkj.love/api/yttp.php')
+      return h.image('https://qtkj.love/api/yttp.php')
     })
   ctx.command('舔狗证 <name>', '示例：舔狗证 名字')
     .action(async ({ session }, name) => {
@@ -43,11 +43,11 @@ export default function (ctx: Context) {
       if (name.length > 5) {
         return '内容过长，最多5个字'
       }
-      return h.image('https://api.qtkj.love/api/tgzm.php?msg=' + name)
+      return h.image('https://qtkj.love/api/tgzm.php?msg=' + name)
     })
   ctx.command('举手机')
     .action(async ({ session }, name) => {
-      return h.image('https://api.qtkj.love/api/sj.php?qq=' + session.event.user.id)
+      return h.image('https://qtkj.love/api/sj.php?qq=' + session.event.user.id)
     })
   ctx.command('猫猫举牌 <text:string>', '示例：猫猫举牌 名字')
     .action(async ({ session }, text) => {
@@ -79,27 +79,21 @@ export default function (ctx: Context) {
       if (text.length > 25) {
         return '内容过长'
       }
-      return h.image('https://api.qtkj.love/api/zt.php?msg=' + text)
+      return h.image('https://qtkj.love/api/zt.php?msg=' + text)
     })
-  ctx.command('喜报', '示例：喜报 内容')
-    .action(async ({ session }, text) => {
+  ctx.command('喜报', '示例：喜报 内容; 可多行，空格隔开')
+    .action(async ({ session }, ...text) => {
       if (!text?.length) {
         return '请输入内容'
       }
-      if (text.length > 25) {
-        return '内容过长'
-      }
-      return h.image('https://api.qtkj.love/api/bx.php?msg=' + text)
+      return h.image('https://qtkj.love/api/bx.php?msg=' + text.join('\n'))
     })
-  ctx.command('悲报', '示例：悲报 内容')
-    .action(async ({ session }, text) => {
+  ctx.command('悲报', '示例：悲报 内容; 可多行，空格隔开')
+    .action(async ({ session }, ...text) => {
       if (!text?.length) {
         return '请输入内容'
       }
-      if (text.length > 25) {
-        return '内容过长'
-      }
-      return h.image('https://api.qtkj.love/api/emote_beibao.php?msg=' + text)
+      return h.image('https://qtkj.love/api/emote_beibao.php?msg=' + text.join('\n'))
     })
   ctx.command('qq评估')
     .action(async ({ session }) => {
@@ -197,7 +191,7 @@ export default function (ctx: Context) {
         {
           type: 'image',
           data: {
-            file: `https://api.qtkj.love/api/qq_xiongji.php?qq=${session.event.user.id}`
+            file: `https://qtkj.love/api/qq_xiongji.php?qq=${session.event.user.id}`
           }
         },
       ])

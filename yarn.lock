@@ -1657,15 +1657,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koishijs/plugin-broadcast@npm:1.1.4":
-  version: 1.1.4
-  resolution: "@koishijs/plugin-broadcast@npm:1.1.4"
-  peerDependencies:
-    koishi: ^4.13.6
-  checksum: 10c0/f61e9a4742c5c0e27c623d85bbcf3456f52786517d8aa35c5d03230305f9cbb827fe2ad6b068a45fe2a03aa85cfdbc107fa8c71b2cdb421db497e561f2e5e1c3
-  languageName: node
-  linkType: hard
-
 "@koishijs/plugin-commands@npm:^3.5.4":
   version: 3.5.4
   resolution: "@koishijs/plugin-commands@npm:3.5.4"
@@ -7217,6 +7208,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"koishi-plugin-axlmly-role-playing-game@npm:1.0.67":
+  version: 1.0.67
+  resolution: "koishi-plugin-axlmly-role-playing-game@npm:1.0.67"
+  peerDependencies:
+    koishi: ^4.17.9
+  checksum: 10c0/5c2dc93e1151800bf017a86cabfc65a8c5955205f720ffb7c8cfb2b0e0aedf6e9be21e00c417d7f055db285fcc0da853df5de6a7d8ee6b5fd8d1b84157da9c69
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-beauty-huluxia@npm:1.6.14":
+  version: 1.6.14
+  resolution: "koishi-plugin-beauty-huluxia@npm:1.6.14"
+  peerDependencies:
+    koishi: ^4.13.8
+  checksum: 10c0/d899681cc40791e66dce252c4323759e959fd7679cd0d8b21c2f6145deb68303706817413b455285c2b19bca2800f2318d4ca572ce6b55dc1cfeeb778b20b853
+  languageName: node
+  linkType: hard
+
 "koishi-plugin-cache-database@npm:2.1.0":
   version: 2.1.0
   resolution: "koishi-plugin-cache-database@npm:2.1.0"
@@ -7225,6 +7234,15 @@ __metadata:
   peerDependencies:
     koishi: ^4.10.0
   checksum: 10c0/2b0be539d6d099e0587b9b7b51534685c973bbfaa1ffbf0b8fdffc6f485e7bdb176df8de9ad56a23b3011d0935abc9fc0851c2d31dae9b5d524563beb9484dd6
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-cchess@npm:1.0.1":
+  version: 1.0.1
+  resolution: "koishi-plugin-cchess@npm:1.0.1"
+  peerDependencies:
+    koishi: ^4.17.4
+  checksum: 10c0/e2a6d7877149e8378f00a773d0a29ae2f26a2880dd2ab0bb3a5c8b89dd44bf3b8221bf8eb4b24a72d65c354367d4e40d5975a7d6b7324b2bb58f38051321f7c1
   languageName: node
   linkType: hard
 
@@ -7294,6 +7312,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"koishi-plugin-chess@npm:4.3.0":
+  version: 4.3.0
+  resolution: "koishi-plugin-chess@npm:4.3.0"
+  peerDependencies:
+    koishi: ^4.15.6
+    koishi-plugin-puppeteer: ^3.7.3
+  peerDependenciesMeta:
+    koishi-plugin-puppeteer:
+      optional: true
+  checksum: 10c0/875aa878ca312f311870ed6c3a0409914a9e0fbecacc2fc2a896ace09249c2dbc7e84ee8afc7e9181319e4aad365e9910fb4510e0d1c9acb0a9af6496e849c6a
+  languageName: node
+  linkType: hard
+
 "koishi-plugin-cron@npm:3.1.0":
   version: 3.1.0
   resolution: "koishi-plugin-cron@npm:3.1.0"
@@ -7302,6 +7333,15 @@ __metadata:
   peerDependencies:
     koishi: ^4.15.6
   checksum: 10c0/643265048de1357a133d21b98fc21a6567216c8c33ade350982c44d79d34632804e7164215af6a16a8835236598e616f7f46df6e38b2a32ed1806c7597dc79c7
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-cumyou@npm:0.1.5":
+  version: 0.1.5
+  resolution: "koishi-plugin-cumyou@npm:0.1.5"
+  peerDependencies:
+    koishi: ^4.16.6
+  checksum: 10c0/dd07dd20217de0a7886065e62b4ca9718b709510f624ed14dd5227f61bbaf0f05e7cab3a08abac90e503d1dc73b184a8c582220874412498e148dcd3f9a72e88
   languageName: node
   linkType: hard
 
@@ -7327,21 +7367,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-forward-hime@npm:1.3.3":
-  version: 1.3.3
-  resolution: "koishi-plugin-forward-hime@npm:1.3.3"
-  peerDependencies:
-    koishi: ^4.17.8
-  checksum: 10c0/d3127facadebfb57a848a3c82462af9a99cc11e7d880da28bb35de9c48bf32383026d0ae046d7d831a541021c7995978cc3883ee78f67b5e7b5cc99c77416063
-  languageName: node
-  linkType: hard
-
 "koishi-plugin-grass-group-friends@npm:1.0.1":
   version: 1.0.1
   resolution: "koishi-plugin-grass-group-friends@npm:1.0.1"
   peerDependencies:
     koishi: ^4.17.9
   checksum: 10c0/d17e6caea7829b55273000f1549128c8afb9867d2ff673a779b821c20091d95b875a045da00c9c22c18c63c804a3e62ce63f87185278c658136711456353fc49
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-lobby@npm:0.5.1":
+  version: 0.5.1
+  resolution: "koishi-plugin-lobby@npm:0.5.1"
+  peerDependencies:
+    koishi: ^4.15.4
+  checksum: 10c0/d7e867b0e7ea03aeb853543a8d409d8a9fd12d29da5b8e5edfed3e0327c1ee6e6f613021abd9f58427020a7f14166ba116a86ba110cab20be4d8ef3dbf2a6110
   languageName: node
   linkType: hard
 
@@ -7460,12 +7500,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koishi-plugin-sd-switch@npm:1.2.0":
-  version: 1.2.0
-  resolution: "koishi-plugin-sd-switch@npm:1.2.0"
+"koishi-plugin-sd-switch@npm:1.2.1":
+  version: 1.2.1
+  resolution: "koishi-plugin-sd-switch@npm:1.2.1"
   peerDependencies:
-    koishi: ^4.10.6-alpha.2
-  checksum: 10c0/0c30672a5a09a31a36b9b03d3255070221b68567e2dfbe1490017d088622e202584d297a294242c533726fa8c98c8bdf0049e2560964ec46f77a2ad1af3286b1
+    koishi: ^4.17.8
+  checksum: 10c0/487ba8b8d4b30916e2e1cf4ffb53edfed3f4124f56b70055968236ada7f75cb8e9b77fddb8dac0a8d6d5b3c633f73f68a2f00f05b8317cfcffe351e3f06a88c6
+  languageName: node
+  linkType: hard
+
+"koishi-plugin-see-color@npm:1.3.2":
+  version: 1.3.2
+  resolution: "koishi-plugin-see-color@npm:1.3.2"
+  peerDependencies:
+    koishi: ^4.17.4
+  checksum: 10c0/fdb4625c0638eeed5fde791e2249d55d2b53165f28f87f7b89e3844ee62fdd0a87821931beba4b74daa7fb0ba984f4571c44e13a7db69b3ead322526322e42d0
   languageName: node
   linkType: hard
 
@@ -7512,7 +7561,6 @@ __metadata:
     "@koishijs/plugin-analytics": "npm:^2.0.6"
     "@koishijs/plugin-auth": "npm:^4.1.6"
     "@koishijs/plugin-bind": "npm:^1.5.1"
-    "@koishijs/plugin-broadcast": "npm:1.1.4"
     "@koishijs/plugin-commands": "npm:^3.5.4"
     "@koishijs/plugin-config": "npm:^2.8.5"
     "@koishijs/plugin-console": "npm:^5.29.2"
@@ -7546,15 +7594,20 @@ __metadata:
     koishi-plugin-adapter-onebot: "npm:6.5.8"
     koishi-plugin-android: "npm:^0.0.1"
     koishi-plugin-assets-local: "npm:^3.3.2"
+    koishi-plugin-axlmly-role-playing-game: "npm:1.0.67"
+    koishi-plugin-beauty-huluxia: "npm:1.6.14"
     koishi-plugin-cache-database: "npm:2.1.0"
+    koishi-plugin-cchess: "npm:1.0.1"
     koishi-plugin-chatluna: "npm:1.0.0-beta.56"
     koishi-plugin-chatluna-openai-adapter: "npm:1.0.0-beta.28"
     koishi-plugin-chatluna-search-service: "npm:1.0.0-beta.24"
+    koishi-plugin-chess: "npm:4.3.0"
     koishi-plugin-cron: "npm:3.1.0"
+    koishi-plugin-cumyou: "npm:0.1.5"
     koishi-plugin-dataview: "npm:^2.6.1"
     koishi-plugin-desktop: "npm:^1.0.0"
-    koishi-plugin-forward-hime: "npm:1.3.3"
     koishi-plugin-grass-group-friends: "npm:1.0.1"
+    koishi-plugin-lobby: "npm:0.5.1"
     koishi-plugin-markdown-to-image-service: "npm:1.2.1"
     koishi-plugin-mememaker: "npm:1.0.21"
     koishi-plugin-message-counter: "npm:2.1.0"
@@ -7564,7 +7617,8 @@ __metadata:
     koishi-plugin-rate-limit: "npm:^2.0.4"
     koishi-plugin-re-driftbottle: "npm:1.3.1"
     koishi-plugin-schedule: "npm:5.0.1"
-    koishi-plugin-sd-switch: "npm:1.2.0"
+    koishi-plugin-sd-switch: "npm:1.2.1"
+    koishi-plugin-see-color: "npm:1.3.2"
     koishi-plugin-telemetry: "npm:^0.2.3"
     koishi-plugin-theme-vanilla: "npm:^1.0.6"
     koishi-plugin-waifu: "npm:1.6.0"
