@@ -3,7 +3,7 @@ import axios from 'axios'
 import fs from 'fs'
 import {resolve} from 'path'
 
-const baseUrl = 'https://qtkj.love/api/spjx.php?msg='
+const baseUrl = 'https://api.cenguigui.cn/api/video/?url='
 const reg = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g
 
 export default function(ctx: Context) {
@@ -18,21 +18,25 @@ export default function(ctx: Context) {
 
         const r: any = await axios.post(`${baseUrl}${url}`).then(r => r.data)
         if (r.code === 200) {
-            const res = await axios.get(r.data.videourl, {
-              responseType: 'stream'
-            }).then(res => res.data)
-            const fileName = new Date().getTime() + '.mp4'
-            const localVideoPath = resolve(__dirname, fileName)
-            const writer = fs.createWriteStream(localVideoPath);
-            res.pipe(writer);
-            await new Promise(resolve => writer.on('finish', resolve));
+          const res = await axios.get(`https://api.suyanw.cn/api/dwz.php?url=${r.data.url}`).then(r => r.data)
+          session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${session.event.user.id}] 由于上传不了群文件，解析地址: ${res.data.url}`)
+          // const res = await axios.get(r.data.url, {
+          //   responseType: 'stream'
+          // }).then(res => res.data)
+          // const fileName = new Date().getTime() + '.mp4'
+          // const localVideoPath = resolve(__dirname, fileName)
+          // const writer = fs.createWriteStream(localVideoPath);
+          // res.pipe(writer);
+          // await new Promise(resolve => writer.on('finish', resolve));
 
-            session.onebot.uploadGroupFile(session.guildId, localVideoPath, fileName).finally(() => fs.unlinkSync(localVideoPath))
+          // session.onebot.uploadGroupFile(session.guildId, localVideoPath, fileName).finally(() => fs.unlinkSync(localVideoPath))
         } else {
           session.send(r.msg)
         }
 
       } catch (error) {
+        console.log(error);
+
         session.send('发生错误')
       }
     })

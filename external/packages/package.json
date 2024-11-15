@@ -2,6 +2,9 @@
   "name": "koishi-plugin-packages",
   "description": "",
   "version": "0.0.1",
+  "contributors": [
+    "coderhyh <coderhyh@gmail.com>"
+  ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -15,6 +18,14 @@
     "plugin"
   ],
   "peerDependencies": {
+    "axios": "1.7.7",
+    "jimp": "^0.22.12",
     "koishi": "^4.17.9"
+  },
+  "koishi": {
+    "description": {
+      "en": "English Description",
+      "zh": "中文描述"
+    }
   }
 }

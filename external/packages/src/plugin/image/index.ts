@@ -15,40 +15,24 @@ export default function (ctx: Context) {
       const fileName = acgImg[Math.floor(Math.random() * acgImg.length)]
       return h.image(pathToFileURL(`${acgUrl}/${fileName}`).href)
     })
-  // ctx.command('随机白丝')
-  //   .action(async ({ session }) => {
-  //     return h.image('https://qtkj.love/api/bsmntp.php')
-  //   })
-  ctx.command('随机jk')
+  ctx.command('随机jk').alias('jk')
     .action(async ({ session }) => {
-      return h.image('https://qtkj.love/api/mnjkt.php')
+      return h.image('https://api.suyanw.cn/api/jk.php')
     })
-  // ctx.command('随机黑丝')
-  //   .action(async ({ session }) => {
-  //     return h.image('https://qtkj.love/api/hs.php')
-  //   })
   ctx.command('随机cos')
     .action(async ({ session }) => {
-      return h.image('https://qtkj.love/api/Cosplay.php')
+      return h.image('https://api.suyanw.cn/api/cos.php')
     })
-  ctx.command('随机幼图')
-    .action(async ({ session }) => {
-      return h.image('https://qtkj.love/api/yttp.php')
-    })
-  ctx.command('舔狗证 <name>', '示例：舔狗证 名字')
-    .action(async ({ session }, name) => {
-      if (/<at id="\d+"\/>/.test(name)) {
-        return '艾特无效，请直接输入内容'
-      }
-      if (name.length > 5) {
-        return '内容过长，最多5个字'
-      }
-      return h.image('https://qtkj.love/api/tgzm.php?msg=' + name)
-    })
-  ctx.command('举手机')
-    .action(async ({ session }, name) => {
-      return h.image('https://qtkj.love/api/sj.php?qq=' + session.event.user.id)
-    })
+  // ctx.command('舔狗证 <name>', '示例：舔狗证 名字')
+  //   .action(async ({ session }, name) => {
+  //     if (/<at id="\d+"\/>/.test(name)) {
+  //       return '艾特无效，请直接输入内容'
+  //     }
+  //     if (name.length > 5) {
+  //       return '内容过长，最多5个字'
+  //     }
+  //     return h.image('https://qtkj.love/api/tgzm.php?msg=' + name)
+  //   })
   ctx.command('猫猫举牌 <text:string>', '示例：猫猫举牌 名字')
     .action(async ({ session }, text) => {
       if (!text?.length) {
@@ -72,29 +56,29 @@ export default function (ctx: Context) {
       return h.image('https://api.suyanw.cn/api/hsjp/?rgb1=0&rgb2=0&rgb3=0&' + msg)
     })
   ctx.command('举牌 <text:string>', '示例：举牌 内容')
-    .action(async ({ session }, text) => {
+    .action(async ({ session }, ...text) => {
       if (!text?.length) {
         return '请输入内容'
       }
-      if (text.length > 25) {
+      if (text.join(' ').length > 30) {
         return '内容过长'
       }
-      return h.image('https://qtkj.love/api/zt.php?msg=' + text)
+      return h.image('https://api.suyanw.cn/api/zt.php?msg=' + text.join(' '))
     })
-  ctx.command('喜报', '示例：喜报 内容; 可多行，空格隔开')
-    .action(async ({ session }, ...text) => {
-      if (!text?.length) {
-        return '请输入内容'
-      }
-      return h.image('https://qtkj.love/api/bx.php?msg=' + text.join('\n'))
-    })
-  ctx.command('悲报', '示例：悲报 内容; 可多行，空格隔开')
-    .action(async ({ session }, ...text) => {
-      if (!text?.length) {
-        return '请输入内容'
-      }
-      return h.image('https://qtkj.love/api/emote_beibao.php?msg=' + text.join('\n'))
-    })
+  // ctx.command('喜报', '示例：喜报 内容; 可多行，空格隔开')
+  //   .action(async ({ session }, ...text) => {
+  //     if (!text?.length) {
+  //       return '请输入内容'
+  //     }
+  //     return h.image('https://qtkj.love/api/bx.php?msg=' + text.join('\n'))
+  //   })
+  // ctx.command('悲报', '示例：悲报 内容; 可多行，空格隔开')
+  //   .action(async ({ session }, ...text) => {
+  //     if (!text?.length) {
+  //       return '请输入内容'
+  //     }
+  //     return h.image('https://qtkj.love/api/emote_beibao.php?msg=' + text.join('\n'))
+  //   })
   ctx.command('qq评估')
     .action(async ({ session }) => {
       session.onebot.sendGroupMsg(session.guildId, [
@@ -120,6 +104,10 @@ export default function (ctx: Context) {
     .action(async ({ session }) => {
       return h.image('https://api.suyanw.cn/api/zs.php?qq=' + session.event.user.id)
     })
+  ctx.command('羡慕')
+    .action(async ({ session }) => {
+      return h.image('https://api.pearktrue.cn/api/qqbqb/xianmu/xianmu.php?qq=' + session.event.user.id)
+    })
 
   const getAcgR18 = async (count = 0) => {
     try {
@@ -139,7 +127,7 @@ export default function (ctx: Context) {
         const fileName = new Date().getTime() + '.jpg'
         const path = resolve(__dirname, fileName)
         // 1031015552 '796522033'
-        const whiteList = ['881549303', '836894810',]
+        const whiteList = ['881549303', '836894810', '768146256', '492126120', '320277810', '541444899', '953324814', '702082516']
         if (!whiteList.includes(session.guildId))
           return 'r18在此群内禁用'
         const img = await getAcgR18()
@@ -149,8 +137,8 @@ export default function (ctx: Context) {
         // 调整亮度和对比度
         image.brightness(0.1); // 亮度，范围[-1, 1]
         image.contrast(0.1);   // 对比度，范围[-1, 1]
-        // 轻微旋转
-        image.rotate(1); // 角度，单位：度
+        // // 轻微旋转
+        // image.rotate(1); // 角度，单位：度
         // 保存修改后的图片
         image.writeAsync(path);
         session.onebot.sendGroupForwardMsg(session.guildId, [
@@ -175,28 +163,7 @@ export default function (ctx: Context) {
         return '获取失败'
       }
     })
-  ctx.command('qq吉凶')
-    .action(async ({ session }) => {
-      // const list = ['3500884590', '2059631180', '2507560118']
-      // if (list.includes(session.event.user.id)) {
-      //   return '你今天是个吉吧！'
-      // }
-      session.onebot.sendGroupMsg(session.guildId, [
-        {
-          type: 'at',
-          data: {
-            qq: session.event.user.id,
-          }
-        },
-        {
-          type: 'image',
-          data: {
-            file: `https://qtkj.love/api/qq_xiongji.php?qq=${session.event.user.id}`
-          }
-        },
-      ])
-    })
-  ctx.command('牵宠物 <at>', '示例：牵宠物 @某人')
+  ctx.command('牵 <at>', '示例：牵 @某人')
     .action(async ({ session }, arg) => {
       const self = session.event.user.id
       const target = arg.match(/\d+/g)?.[0]

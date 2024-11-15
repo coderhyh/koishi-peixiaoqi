@@ -22,20 +22,30 @@ const reqAudio = async (session: Session, content: string[], name: string) => {
   }
 }
 export default function (ctx: Context) {
-  ctx.command('丁真 <content:string>', '示例：丁真 内容')
-    .action(async ({ session }, ...content) => {
-      reqAudio(session, content, 'dinzheng')
-    })
-  // ctx.command('东雪莲 <content:string>', '示例：东雪莲 内容')
+  // ctx.command('撒娇')
   //   .action(async ({ session }, ...content) => {
-  //     reqAudio(session, content, 'dongxuelian')
+  //     try {
+  //       const res = await axios.get('https://api.pearktrue.cn/api/yujie/?type=mp3').then(r => r.data)
+  //       console.log(res);
+  //       await session.onebot.sendGroupMsg(session.guildId, `[CQ:record,file=${res.audiopath}]`)
+  //     } catch (error) {
+  //       return '获取失败'
+  //     }
   //   })
-  ctx.command('懒羊羊 <content:string>', '示例：懒羊羊 内容')
-    .action(async ({ session }, ...content) => {
-      reqAudio(session, content, 'lanyangyang')
-    })
-  ctx.command('陈泽 <content:string>', '示例：陈泽 内容')
-    .action(async ({ session }, ...content) => {
-      reqAudio(session, content, 'chenze')
-    })
+  // ctx.command('丁真 <content:string>', '示例：丁真 内容')
+  //   .action(async ({ session }, ...content) => {
+  //     reqAudio(session, content, 'dinzheng')
+  //   })
+  // // ctx.command('东雪莲 <content:string>', '示例：东雪莲 内容')
+  // //   .action(async ({ session }, ...content) => {
+  // //     reqAudio(session, content, 'dongxuelian')
+  // //   })
+  // ctx.command('懒羊羊 <content:string>', '示例：懒羊羊 内容')
+  //   .action(async ({ session }, ...content) => {
+  //     reqAudio(session, content, 'lanyangyang')
+  //   })
+  // ctx.command('陈泽 <content:string>', '示例：陈泽 内容')
+  //   .action(async ({ session }, ...content) => {
+  //     reqAudio(session, content, 'chenze')
+  //   })
 }

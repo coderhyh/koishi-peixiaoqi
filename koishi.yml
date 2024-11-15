@@ -1,20 +1,19 @@
 plugins:
   group:server:
-    $collapsed: true
     server:7duhwz:
       port: 5140
       maxPort: 5149
     ~server-satori:xd8wn9: {}
     ~server-temp:0zulrz: {}
   group:basic:
-    $collapsed: true
-    ~admin:ejm83h: {}
+    admin:ejm83h: {}
     ~bind:2fp02n: {}
     commands:eisfl9:
       messagecounter.排行榜:
         aliases:
           排行榜: null
           看谁壁画多: null
+          壁画: null
       messagecounter.群排行榜:
         aliases:
           群排行榜: null
@@ -79,18 +78,64 @@ plugins:
       葫芦侠-三坑少女:
         aliases:
           三坑少女: null
+          三坑: null
       随机ai图片:
         aliases:
           随机ai: null
       二次元-猫耳:
         aliases:
           猫耳: null
-    help:ohufsc: {}
+      coser搜索:
+        aliases:
+          cos: null
+      随机白丝:
+        aliases:
+          白丝: null
+      随机黑丝:
+        aliases:
+          黑丝: null
+      markdowntoimage:
+        aliases:
+          md: null
+        config:
+          hidden: true
+      随机美腿:
+        aliases:
+          美腿: null
+      pix-nyan:
+        aliases:
+          pix: null
+      同人图搜索:
+        aliases:
+          同人: null
+      channel:
+        config:
+          hidden: true
+      help:
+        aliases:
+          菜单: null
+      user:
+        config:
+          hidden: true
+      universal-translation:
+        config:
+          hidden: true
+      help-pro:
+        aliases:
+          help: null
+      淘宝买家秀:
+        aliases:
+          淘宝买家秀:
+            filter: false
+      随机jk图片:
+        aliases:
+          ' 随机jk': null
+    ~help:ohufsc: {}
     http:c3cc9w: {}
     ~inspect:xi18pm: {}
     locales:6gr4xu: {}
     proxy-agent:or6jk0:
-      proxyAgent: socks://127.0.0.1:7890
+      proxyAgent: socks://127.0.0.1:7897
     rate-limit:432qhh: {}
     telemetry:90d8q0: {}
   group:console:
@@ -151,25 +196,28 @@ plugins:
     hmr:99u4am:
       root: .
   packages:h65i5l: {}
-  adapter-onebot:hi101o:
-    selfId: '206499354'
+  adapter-onebot:epww1j:
+    selfId: '780351284'
   group:0lbuwt:
+    $collapsed: true
     $label: ai
-    chatluna-openai-adapter:5evycf:
+    ~chatluna-openai-adapter:5evycf:
       apiKeys:
         - - sk-KobCy0y6RrT1e5wS123b7a5932Ce4b39988f3197Fa4eF2F0
           - https://openkey.cloud/v1
-    chatluna:l3rc3w:
+      temperature: 0.5
+    ~chatluna:l3rc3w:
       botName: 佩小琪
       isReplyWithAt: true
       privateChatWithoutCommand: true
       defaultModel: openai/gpt-3.5-turbo
-      defaultPreset: catgirl
-    novelai:nels0g:
+      defaultPreset: 猫娘
+      proxyAddress: http://127.0.0.1:7890
+    ~neko:d8onpc: {}
+    ~novelai:nels0g:
       type: sd-webui
       endpoint: https://ai.coderhyh.cn/
       features: {}
-      translator: false
       negativePrompt: >-
         (worst quality:1.4),(low quality:1.4),(normal
         quality:1.4),lowres,((monochrome)),((grayscale)),bad
@@ -187,7 +235,11 @@ plugins:
         displeasing, chromatic aberration, signature, extra digits, artistic
         error, username, scan, [abstract]
       hiresFix: true
-    sd-switch:juarub:
+      $filter:
+        $ne:
+          - $: guildId
+          - '796522033'
+    ~sd-switch:juarub:
       endpoint: https://ai.coderhyh.cn/
       inputTimeout: 20000
       sendAsImage: true
@@ -207,17 +259,20 @@ plugins:
       maxInterval: 600
       localSource: true
       guildId:
-        onebot: 796522033,855139333
+        onebot: '855139333'
       commentLimit: 10
       bottleLimit: 10
       hotBottleLimit: 10
       nameBottleLimit: 10
       hotThresholdValue: 5
-      randomSend: true
       $filter:
-        $ne:
-          - $: guildId
-          - '1031015552'
+        $and:
+          - $ne:
+              - $: guildId
+              - '1031015552'
+          - $ne:
+              - $: guildId
+              - '796522033'
     waifu:x7jr41:
       onlyActiveUser: true
       activeDays: 1
@@ -225,29 +280,70 @@ plugins:
       avoidNtr: true
     message-counter:dv4u5y:
       isYesterdayCommentRankingDisabled: true
-      defaultMaxDisplayCount: 10
-      autoPush: true
       shouldSendDailyLeaderboardAtMidnight: false
-      dailyScheduledTimers:
-        - '10:00'
-        - '11:00'
-        - '15:00'
-        - '17:00'
+      isTextToImageConversionEnabled: true
+      isLeaderboardToHorizontalBarChartConversionEnabled: true
+      horizontalBarChartStyle: '1'
     music-downloadvoice-api:qkltel:
       imageMode: true
     cumyou:vapsq4: {}
     chess:wsk5uz: {}
-    cchess:2ghbf2: {}
+    see-color:ftq4k1:
+      blockGuessTimeLimitInSeconds: 300
+    beauty-huluxia:mynjp7: {}
+    cchess:2ghbf2:
+      boardSkin: 女神之约棋盘
+      allowFreePieceMovementInHumanMachineMode: true
     grass-group-friends:51t9cs:
       coolDown: 10
       toggleCoolDown: 10
   group:28k5ee:
+    $collapsed: true
     $label: 工具
     cron:3hgdka: {}
     markdown-to-image-service:smoywp: {}
     puppeteer:u00eqs: {}
     cache-database:x1jsj2: {}
+    universal-translation:bmbme0: {}
+    qqgroup-manager:8dh6mg:
+      setEssenceMsgCommand: 设精
+      deleteEssenceMsgCommand: 取精
+      $filter:
+        $eq:
+          - $: guildId
+          - '807188722'
+      setGroupAdmin: 3
+      setGroupKick: 3
+      setGroupWholeBan: 3
+      setGroupBan: 3
+      setGroupCard: 3
+      setGroupSpecialTitle: 3
+      deleteMsg: 3
+      setEssenceMsg: 3
+    ~verifier:0ful7e:
+      onGuildMemberRequest: true
+      onFriendRequest: true
     ~schedule:vq446g: {}
-  see-color:ftq4k1:
-    blockGuessTimeLimitInSeconds: 60
-  beauty-huluxia:mynjp7: {}
+  ~bilibili-notify:pxx7gd:
+    key: 24dd9415ac89d1705b800ff5baf164e4
+    master:
+      masterAccount: '772567615'
+    dynamicUrl: true
+    removeBorder: true
+  deer-pipe:62sj1b:
+    enable_deerpipe: true
+    enable_blue_tip: true
+  monetary:lxytyr: {}
+  help-pro:8xoqxy:
+    output: text
+  memes-api:fjlg60:
+    shortcutUsePrefix: false
+    listSortBy: type
+    listTextTemplate: '{index}.{keywords}'
+  poke:18fn1w:
+    messages:
+      - content: <at id={userId}/>  不要戳佩小琪！
+        weight: 50
+    command:
+      content: poke
+    mode: message
