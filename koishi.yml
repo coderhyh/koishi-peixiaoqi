@@ -1,11 +1,13 @@
 plugins:
   group:server:
+    $collapsed: true
     server:7duhwz:
       port: 5140
       maxPort: 5149
     ~server-satori:xd8wn9: {}
     ~server-temp:0zulrz: {}
   group:basic:
+    $collapsed: true
     admin:ejm83h: {}
     ~bind:2fp02n: {}
     commands:eisfl9:
@@ -17,6 +19,7 @@ plugins:
       messagecounter.群排行榜:
         aliases:
           群排行榜: null
+          群壁画: null
       broadcast:
         config:
           hidden: true
@@ -85,15 +88,6 @@ plugins:
       二次元-猫耳:
         aliases:
           猫耳: null
-      coser搜索:
-        aliases:
-          cos: null
-      随机白丝:
-        aliases:
-          白丝: null
-      随机黑丝:
-        aliases:
-          黑丝: null
       markdowntoimage:
         aliases:
           md: null
@@ -130,7 +124,45 @@ plugins:
       随机jk图片:
         aliases:
           ' 随机jk': null
-    ~help:ohufsc: {}
+      beauty-huluxia:
+        config:
+          hidden: true
+      ggf-off:
+        name: /我不想被草了
+      ggf-on:
+        name: /我又想被草了
+      manager:
+        config:
+          hidden: true
+      messagecounter:
+        config:
+          hidden: true
+      poke:
+        config:
+          hidden: true
+      tb:
+        config:
+          hidden: true
+      muteme:
+        aliases:
+          禁言我: null
+          自闭: null
+          我要自闭: null
+        config:
+          hidden: true
+      delmsg:
+        aliases:
+          撤回: null
+      ban-me:
+        aliases:
+          我要自闭: null
+      group-manage:
+        config:
+          hidden: true
+      unban:
+        aliases:
+          解除禁言: null
+    help:ohufsc: {}
     http:c3cc9w: {}
     ~inspect:xi18pm: {}
     locales:6gr4xu: {}
@@ -199,21 +231,40 @@ plugins:
   adapter-onebot:epww1j:
     selfId: '780351284'
   group:0lbuwt:
-    $collapsed: true
     $label: ai
-    ~chatluna-openai-adapter:5evycf:
+    chatluna-openai-adapter:5evycf:
       apiKeys:
         - - sk-KobCy0y6RrT1e5wS123b7a5932Ce4b39988f3197Fa4eF2F0
           - https://openkey.cloud/v1
       temperature: 0.5
-    ~chatluna:l3rc3w:
+    ~yesimbot:lggfo7:
+      Group:
+        AllowedGroups:
+          - '855139333'
+      API:
+        APIList:
+          - BaseURL: https://api.gptgod.online/
+            AIModel: gpt-4o-mini
+            APIKey: sk-j7sVgFZMPD2jJxu4jmw4NyQDSNH30TlaiZobjwcwUb4JaeK1
+      ImageViewer: {}
+      Bot:
+        SelfAwareness: 此页面设置的名字
+        BotHometown: 杭州
+        BotHabbits: 前端开发
+      Debug:
+        UpdatePromptOnLoad: false
+        DebugAsInfo: true
+    chatluna:l3rc3w:
       botName: 佩小琪
-      isReplyWithAt: true
-      privateChatWithoutCommand: true
-      defaultModel: openai/gpt-3.5-turbo
+      privateChatWithoutCommand: false
+      defaultModel: openai/gpt-4o-mini
       defaultPreset: 猫娘
       proxyAddress: http://127.0.0.1:7890
-    ~neko:d8onpc: {}
+      autoCreateRoomFromUser: true
+      allowPrivate: false
+      isReplyWithAt: true
+      longMemoryExtractModel: openai/gpt-4o-mini
+      autoDelete: true
     ~novelai:nels0g:
       type: sd-webui
       endpoint: https://ai.coderhyh.cn/
@@ -247,6 +298,7 @@ plugins:
       searchEngine: serper
       serperApiKey: b3116db34d3fe68ad78697808aace2dd34d41b37
   group:5ktovl:
+    $collapsed: true
     $label: 娱乐
     mememaker:k6ias2:
       loggerinfo: true
@@ -287,13 +339,9 @@ plugins:
     music-downloadvoice-api:qkltel:
       imageMode: true
     cumyou:vapsq4: {}
-    chess:wsk5uz: {}
     see-color:ftq4k1:
       blockGuessTimeLimitInSeconds: 300
     beauty-huluxia:mynjp7: {}
-    cchess:2ghbf2:
-      boardSkin: 女神之约棋盘
-      allowFreePieceMovementInHumanMachineMode: true
     grass-group-friends:51t9cs:
       coolDown: 10
       toggleCoolDown: 10
@@ -305,37 +353,14 @@ plugins:
     puppeteer:u00eqs: {}
     cache-database:x1jsj2: {}
     universal-translation:bmbme0: {}
-    qqgroup-manager:8dh6mg:
-      setEssenceMsgCommand: 设精
-      deleteEssenceMsgCommand: 取精
-      $filter:
-        $eq:
-          - $: guildId
-          - '807188722'
-      setGroupAdmin: 3
-      setGroupKick: 3
-      setGroupWholeBan: 3
-      setGroupBan: 3
-      setGroupCard: 3
-      setGroupSpecialTitle: 3
-      deleteMsg: 3
-      setEssenceMsg: 3
     ~verifier:0ful7e:
       onGuildMemberRequest: true
       onFriendRequest: true
     ~schedule:vq446g: {}
-  ~bilibili-notify:pxx7gd:
-    key: 24dd9415ac89d1705b800ff5baf164e4
-    master:
-      masterAccount: '772567615'
-    dynamicUrl: true
-    removeBorder: true
   deer-pipe:62sj1b:
     enable_deerpipe: true
     enable_blue_tip: true
   monetary:lxytyr: {}
-  help-pro:8xoqxy:
-    output: text
   memes-api:fjlg60:
     shortcutUsePrefix: false
     listSortBy: type
@@ -347,3 +372,14 @@ plugins:
     command:
       content: poke
     mode: message
+  repeater:q4g0nm:
+    onRepeat: {}
+  ~locale-zh-cn-zako-yuri:jll71d: {}
+  better-custom-welcome-message:fy0f1m:
+    custom_welcome_messages:
+      - '{at} 年纪轻轻进了这个群，你的未来毁了'
+    custom_leave_messages:
+      - '{user} 离开了 {group}'
+  ~help-img:1uq6e3: {}
+  group-manage:u7yp9c:
+    banDuration: 60000

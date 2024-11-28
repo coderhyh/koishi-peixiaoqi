@@ -22,6 +22,14 @@ const reqAudio = async (session: Session, content: string[], name: string) => {
   }
 }
 export default function (ctx: Context) {
+  ctx.command('鸡你太美')
+    .action(async ({ session }) => {
+      return h.audio('http://api.yujn.cn/api/sjkk.php')
+    })
+  ctx.command('hentai')
+    .action(async ({ session }) => {
+      return h.audio('http://api.yujn.cn/api/maren.php')
+    })
   // ctx.command('撒娇')
   //   .action(async ({ session }, ...content) => {
   //     try {

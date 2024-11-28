@@ -1,6 +1,8 @@
 import { } from 'koishi-plugin-cron'
 import { } from 'koishi-plugin-adapter-onebot'
-import { Context } from 'koishi'
+import { Context, h } from 'koishi'
+import { pathToFileURL } from 'url'
+import { resolve } from 'path'
 
 
 export default async function (ctx: Context) {
@@ -25,17 +27,6 @@ export default async function (ctx: Context) {
   //     )
   // })
 
-  ctx.command('佩小琪上班啦')
-    .action(async ({ session }) => {
-      const bot = ctx.bots[0]
-      const guildList = await bot.getGuildList()
-      const blackList = ['836894810']
-      guildList.data
-        .forEach(e =>
-          blackList.some(v => e.id !== v) &&
-          bot.sendMessage(e.id, '大家早呀！佩小琪回来啦！')
-        )
-    })
   ctx.command('佩小琪下班啦')
     .action(async ({ session }) => {
       const bot = ctx.bots[0]

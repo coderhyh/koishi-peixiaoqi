@@ -4,6 +4,8 @@ import path from 'path'
 import audio from './plugin/audio'
 import image from './plugin/image'
 import text from './plugin/text'
+import task from './plugin/task'
+import roastChiken from './plugin/roastChiken'
 
 export const name = 'hyh'
 
@@ -36,4 +38,6 @@ export function apply(ctx: Context) {
   audio(ctx)
   image(ctx)
   text(ctx)
+  task(ctx)
+  roastChiken(ctx)
 }

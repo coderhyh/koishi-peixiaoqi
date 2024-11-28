@@ -111,17 +111,15 @@ export default function (ctx: Context) {
 
   const getAcgR18 = async (count = 0) => {
     try {
-      const res = await axios.get('https://api.lolicon.app/setu/v2?size=regular&r18=1&tag=白丝|黑丝').then(r => r.data)
-      const url = res?.data?.[0]?.urls?.regular
-      const img = await axios.get(url, { responseType: 'arraybuffer' }).then(r => r.data)
-      return img
+      const img = await axios.get('http://api.yujn.cn/api/sese.php', { responseType: 'arraybuffer' })
+      return img.data
     } catch (error) {
       console.log('获取失败', count, error.message);
       if (count++ < 5) return await getAcgR18(count)
       throw Error('获取失败')
     }
   }
-  ctx.command('随机二次元r18', '(r18慎用)')
+  ctx.command('涩涩', '(r18)')
     .action(async ({ session }) => {
       try {
         const fileName = new Date().getTime() + '.jpg'
@@ -129,10 +127,10 @@ export default function (ctx: Context) {
         // 1031015552 '796522033'
         const whiteList = ['881549303', '836894810', '768146256', '492126120', '320277810', '541444899', '953324814', '702082516']
         if (!whiteList.includes(session.guildId))
-          return 'r18在此群内禁用'
+          return '涩涩在此群内禁用'
         const img = await getAcgR18()
         fs.writeFileSync(path, img)
-        console.log('随机二次元r18');
+        console.log('涩涩');
         const image = await Jimp.read(path)
         // 调整亮度和对比度
         image.brightness(0.1); // 亮度，范围[-1, 1]
@@ -191,4 +189,29 @@ export default function (ctx: Context) {
     .action(async ({ session }) => {
       return h.image('https://api.suyanw.cn/api/tgbj.php')
     })
+  ctx.command('摸鱼')
+    .action(async ({ session }) => {
+      return h.image('http://api.yujn.cn/api/moyu.php?msg=摸鱼日报&type=image')
+    })
+  ctx.command('我家哥哥').alias('哥哥', '鸡哥', '坤坤', '小黑子')
+    .action(async ({ session }) => {
+      return h.image('http://api.yujn.cn/api/cxk.php?')
+    })
+
+  // ctx.command('造谣')
+  //   .action(async ({ session }) => {
+  //     session.onebot.sendGroupForwardMsg(session.guildId, [
+  //       {
+  //         type: "node",
+  //         data: {
+  //           user_id: "2507560118",
+  //           nickname: "候凯",
+  //           content: [
+  //             // { type: "text", data: { text: '主人请看～' } },
+  //             // { type: "image", data: { file: path } },
+  //           ]
+  //         }
+  //       }
+  //     ] as any)
+  //   })
 }

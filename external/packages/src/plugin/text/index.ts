@@ -10,11 +10,6 @@ export default function (ctx: Context) {
       const text = await axios.get('https://api.suyanw.cn/api/kfcyl.php?type=text').then(r => r.data)
       return h.text(text)
     })
-  ctx.command('uuid')
-    .action(async ({ session }, arg) => {
-      const text = await axios.get('https://api.suyanw.cn/api/uuid.php?type=text').then(r => r.data)
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${session.event.user.id}] ${text}`)
-    })
   ctx.command('鸡汤')
     .action(async ({ session }, arg) => {
       const text = await axios.get('https://api.suyanw.cn/api/djt.php').then(r => r.data)
@@ -25,10 +20,6 @@ export default function (ctx: Context) {
       const res = await axios.get('https://api.oddfar.com/yl/q.php?c=1009&encode=text').then(r => r.data)
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${session.event.user.id}] ${res}`)
     })
-  ctx.guild('796522033').command('轻骑兵')
-    .action(async ({ session }) => {
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=1804569144] 沟槽的轻骑兵`)
-    })
   ctx.guild().command('随机男同')
     .action(async ({ session }) => {
       const groupList = await session.onebot.getGroupMemberList(session.guildId)
@@ -38,38 +29,6 @@ export default function (ctx: Context) {
       const user = list[random]
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${user.user_id}] 男同在这呢`)
     })
-  // ctx.guild('796522033', '881549303').command('樱岛')
-  //   .action(async ({ session }) => {
-  //     session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=987942314] 沟槽的樱道友`)
-  //   })
-  // ctx.guild('881549303').command('候凯').alias('侯凯')
-  //   .action(async ({ session }) => {
-  //     session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=468794893][CQ:at,qq=2507560118] 沟槽的sb候凯`)
-  //   })
-  // ctx.guild('881549303').command('盗图')
-  //   .action(async ({ session }) => {
-  //     session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=468794893][CQ:at,qq=2507560118] 沟槽的sb盗图狗`)
-  //   })
-  // ctx.guild('881549303').command('狗屎')
-  //   .action(async ({ session }) => {
-  //     session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=468794893][CQ:at,qq=2507560118] 狗屎人写狗屎代码`)
-  //   })
-  ctx.guild('796522033').command('管理员')
-    .action(async ({ session }) => {
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=1715173126] 狗群主 快给[CQ:at,qq=${session.event.user.id}]管理员`);
-    })
-  ctx.guild('796522033').command('咋了')
-    .action(async ({ session }) => {
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=676220020] 你到底咋了？？？你咋了？你咋了？`);
-    })
-  ctx.guild('953324814').command('侯凯')
-    .action(async ({ session }) => {
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=2507560118][CQ:at,qq=468794893] 别生气 哄哄侯凯宝宝～炒萝卜炒萝卜🥕切切切🔪 侯凯宝宝侯凯宝宝👶捏捏捏🤏`);
-    })
-  ctx.guild('796522033', '436984426', '745893769').command('大海')
-    .action(async ({ session }) => {
-      session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=2259660294] 两眼一条缝，外八小胡子，右嘴一颗痣，手拿爱疯15，张嘴八系，闭嘴拆迁`)
-    })
   ctx.command('qq吉凶')
     .action(async ({ session }) => {
       const res = await axios.get(`https://api.suyanw.cn/api/xiangji.php?qq=${session.event.user.id}`).then(r => r.data)
@@ -77,11 +36,6 @@ export default function (ctx: Context) {
     })
   ctx.command('tb')
     .action(async ({ session }) => 'tb已禁用')
-  ctx.command('缘分 <name1:string> <name2:string>', '示例：缘分 <姓名1> <姓名2>')
-    .action(async ({ session }, name1, name2) => {
-      const res = await axios.get(`https://api.xingzhige.com/API/yuanfen/?name1=${name1}&name2=${name2}`).then(r => r.data)
-      session.onebot.sendGroupMsg(session.guildId, `${res.data.name}: ${res.data.yan}\n${res.data.text}`)
-    })
   ctx.command('骂 <at>', '示例：骂 @某人')
     .action(async ({ session }, user) => {
       const self = session.event.user.id
@@ -104,28 +58,6 @@ export default function (ctx: Context) {
       const res = await axios.get('https://api.oddfar.com/yl/q.php?c=1009&encode=text').then(r => r.data)
       session.onebot.sendGroupMsg(session.guildId, `[CQ:at,qq=${target}] ${res}`)
     })
-  // ctx.command('点歌 <music:string>', '示例：点歌 鸡你太美')
-  //   .action(async ({ session }, musicName) => {
-  //     try {
-  //       const music = musicName.trim()
-  //       if (!music) return '请输入歌名再来'
-  //       const res = await axios.get(`https://qtkj.love/api/qq_music.php?msg=${music}&n=1`).then(r => r.data)
-  //       console.log('点歌: ', music, ': ', res);
-  //       if (res.status === 'success') {
-  //         const r = await axios.get(res.url, { responseType: 'stream' }).then(r => r.data)
-  //         const fileName = new Date().getTime() + '.mp3'
-  //         const localAudioPath = resolve(__dirname, fileName)
-  //         const writer = fs.createWriteStream(localAudioPath);
-  //         r.pipe(writer);
-  //         await new Promise(resolve => writer.on('finish', resolve));
-  //         // return h.audio(pathToFileURL(localAudioPath).href)
-  //         session.onebot.uploadGroupFile(session.guildId, localAudioPath, `${music}-${res.singer}.mp3`)
-  //           .finally(() => fs.unlinkSync(localAudioPath))
-  //       } else return '点歌失败'
-  //     } catch (error) {
-  //       return '点歌失败'
-  //     }
-  //   })
   ctx.command('抽签')
     .action(async ({ session }) => {
       try {
