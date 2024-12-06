@@ -2618,6 +2618,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@soloshine/koishi-plugin-adapter-wechatferry@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@soloshine/koishi-plugin-adapter-wechatferry@npm:0.0.2"
+  dependencies:
+    form-data: "npm:^4.0.1"
+    xml2js: "npm:^0.6.2"
+  peerDependencies:
+    koishi: ^4.18.0
+  checksum: 10c0/0527776b0b7b4f85290db1b7e936893032dfd870915d169796cbff169f1e79fc33f55362523f5b64cff5ce958f9d1b457563acc60f91b63c03c2437ec266c420
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-virtual@npm:^3.0.0-beta.60":
   version: 3.8.3
   resolution: "@tanstack/react-virtual@npm:3.8.3"
@@ -6435,6 +6447,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"form-data@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "form-data@npm:4.0.1"
+  dependencies:
+    asynckit: "npm:^0.4.0"
+    combined-stream: "npm:^1.0.8"
+    mime-types: "npm:^2.1.12"
+  checksum: 10c0/bb102d570be8592c23f4ea72d7df9daa50c7792eb0cf1c5d7e506c1706e7426a4e4ae48a35b109e91c85f1c0ec63774a21ae252b66f4eb981cb8efef7d0463c8
+  languageName: node
+  linkType: hard
+
 "form-data@npm:~2.3.2":
   version: 2.3.3
   resolution: "form-data@npm:2.3.3"
@@ -8182,6 +8205,7 @@ __metadata:
     "@koishijs/plugin-status": "npm:^7.4.10"
     "@koishijs/scripts": "npm:^4.5.2"
     "@satorijs/element": "npm:3.1.7"
+    "@soloshine/koishi-plugin-adapter-wechatferry": "npm:0.0.2"
     "@types/node": "npm:^20.11.30"
     "@types/react": "npm:^18.2.70"
     axios: "npm:1.7.8"
@@ -12139,6 +12163,16 @@ __metadata:
     sax: "npm:>=0.6.0"
     xmlbuilder: "npm:~11.0.0"
   checksum: 10c0/c9cd07cd19c5e41c740913bbbf16999a37a204488e11f86eddc2999707d43967197e257014d7ed72c8fc4348c192fa47eb352d1d9d05637cefd0d2e24e9aa4c8
+  languageName: node
+  linkType: hard
+
+"xml2js@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "xml2js@npm:0.6.2"
+  dependencies:
+    sax: "npm:>=0.6.0"
+    xmlbuilder: "npm:~11.0.0"
+  checksum: 10c0/e98a84e9c172c556ee2c5afa0fc7161b46919e8b53ab20de140eedea19903ed82f7cd5b1576fb345c84f0a18da1982ddf65908129b58fc3d7cbc658ae232108f
   languageName: node
   linkType: hard
 

@@ -6,6 +6,7 @@ import image from './plugin/image'
 import text from './plugin/text'
 import task from './plugin/task'
 import roastChiken from './plugin/roastChiken'
+import watermark from './plugin/watermark'
 
 export const name = 'hyh'
 
@@ -35,9 +36,26 @@ export function apply(ctx: Context) {
   //   fn(ctx)
   // }
 
+  // docker run -d \
+  // --name=meme-generator \
+  // -p 2233:2233 \
+  // -v /Users/coderhyh/Pictures/memes:/data/memes \
+  // --restart always \
+  // meetwq/meme-generator:latest
+
+  // docker run -v /Users/coderhyh/Desktop/docker-volumes/douyin_tiktok_download_api/douyin_web/config.yaml:/app/crawlers/douyin/web/config.yaml -d --name douyin_tiktok_api -p 7769:80 evil0ctal/douyin_tiktok_download_api
+
+  // docker run -d \
+  //   --name=javbus-api \
+  //   --restart=unless-stopped \
+  //   -p 8922:3000 \
+  //   -e HTTP_PROXY=http://host.docker.internal:7897 \
+  //   ovnrain/javbus-api
+
   audio(ctx)
   image(ctx)
   text(ctx)
   task(ctx)
   roastChiken(ctx)
+  watermark(ctx)
 }

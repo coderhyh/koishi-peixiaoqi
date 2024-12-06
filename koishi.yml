@@ -162,6 +162,19 @@ plugins:
       unban:
         aliases:
           解除禁言: null
+      jav:
+        aliases:
+          搜番号: null
+      jkw:
+        aliases:
+          搜涩涩: null
+        name: /搜涩涩
+      jew:
+        aliases:
+          今日涩涩:
+            options: {}
+            args:
+              - 无码
     help:ohufsc: {}
     http:c3cc9w: {}
     ~inspect:xi18pm: {}
@@ -298,7 +311,6 @@ plugins:
       searchEngine: serper
       serperApiKey: b3116db34d3fe68ad78697808aace2dd34d41b37
   group:5ktovl:
-    $collapsed: true
     $label: 娱乐
     mememaker:k6ias2:
       loggerinfo: true
@@ -338,7 +350,8 @@ plugins:
       horizontalBarChartStyle: '1'
     music-downloadvoice-api:qkltel:
       imageMode: true
-    cumyou:vapsq4: {}
+    cumyou:vapsq4:
+      maxCount: 5
     see-color:ftq4k1:
       blockGuessTimeLimitInSeconds: 300
     beauty-huluxia:mynjp7: {}
@@ -383,3 +396,6 @@ plugins:
   ~help-img:1uq6e3: {}
   group-manage:u7yp9c:
     banDuration: 60000
+  ~@soloshine/adapter-wechatferry:a58hpe:
+    keepAlive: true
+    isOutLog: true

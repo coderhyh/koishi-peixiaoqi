@@ -193,7 +193,7 @@ export default function (ctx: Context) {
     .action(async ({ session }) => {
       return h.image('http://api.yujn.cn/api/moyu.php?msg=摸鱼日报&type=image')
     })
-  ctx.command('我家哥哥').alias('哥哥', '鸡哥', '坤坤', '小黑子')
+  ctx.command('我家哥哥').alias('哥哥', '好哥哥', '鸡哥', '坤坤', '小黑子', '坤', 'ikun')
     .action(async ({ session }) => {
       return h.image('http://api.yujn.cn/api/cxk.php?')
     })

@@ -83,6 +83,7 @@
     "@koishijs/plugin-server-temp": "1.5.0",
     "@koishijs/plugin-status": "^7.4.10",
     "@satorijs/element": "3.1.7",
+    "@soloshine/koishi-plugin-adapter-wechatferry": "0.0.2",
     "axios": "1.7.8",
     "cosmokit": "1.6.3",
     "jimp": "^0.22.12",
