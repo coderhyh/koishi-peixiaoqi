@@ -1,6 +1,5 @@
 plugins:
   group:server:
-    $collapsed: true
     server:7duhwz:
       port: 5140
       maxPort: 5149
@@ -166,15 +165,23 @@ plugins:
         aliases:
           搜番号: null
       jkw:
+        name: /搜涩涩
         aliases:
           搜涩涩: null
-        name: /搜涩涩
       jew:
         aliases:
           今日涩涩:
-            options: {}
             args:
               - 无码
+            options: {}
+      enka.uid:
+        aliases:
+          uid: null
+      warning:
+        config:
+          permissions:
+            - authority:4
+          hidden: true
     help:ohufsc: {}
     http:c3cc9w: {}
     ~inspect:xi18pm: {}
@@ -278,6 +285,7 @@ plugins:
       isReplyWithAt: true
       longMemoryExtractModel: openai/gpt-4o-mini
       autoDelete: true
+      allowAtReply: false
     ~novelai:nels0g:
       type: sd-webui
       endpoint: https://ai.coderhyh.cn/
@@ -315,28 +323,9 @@ plugins:
     mememaker:k6ias2:
       loggerinfo: true
       isSendTimes: false
-    re-driftbottle:r4ukxz:
-      manager:
-        - '772567615'
-      path: data/re-driftbottle
-      minInterval: 300
-      maxInterval: 600
-      localSource: true
-      guildId:
-        onebot: '855139333'
-      commentLimit: 10
-      bottleLimit: 10
-      hotBottleLimit: 10
-      nameBottleLimit: 10
-      hotThresholdValue: 5
-      $filter:
-        $and:
-          - $ne:
-              - $: guildId
-              - '1031015552'
-          - $ne:
-              - $: guildId
-              - '796522033'
+    music-voice:5tkbcu:
+      menuExitCommandTip: true
+      imageMode: true
     waifu:x7jr41:
       onlyActiveUser: true
       activeDays: 1
@@ -348,8 +337,6 @@ plugins:
       isTextToImageConversionEnabled: true
       isLeaderboardToHorizontalBarChartConversionEnabled: true
       horizontalBarChartStyle: '1'
-    music-downloadvoice-api:qkltel:
-      imageMode: true
     cumyou:vapsq4:
       maxCount: 5
     see-color:ftq4k1:
@@ -373,11 +360,14 @@ plugins:
   deer-pipe:62sj1b:
     enable_deerpipe: true
     enable_blue_tip: true
+    calendarImagePreset2: '2'
   monetary:lxytyr: {}
   memes-api:fjlg60:
-    shortcutUsePrefix: false
     listSortBy: type
     listTextTemplate: '{index}.{keywords}'
+    requestConfig:
+      keepAlive: false
+    shortcutUsePrefix: false
   poke:18fn1w:
     messages:
       - content: <at id={userId}/>  不要戳佩小琪！
@@ -399,3 +389,23 @@ plugins:
   ~@soloshine/adapter-wechatferry:a58hpe:
     keepAlive: true
     isOutLog: true
+  warning:q4hegk:
+    全局提醒关键词:
+      - 佩奇
+      - 佩琪
+    超级管理员:
+      - '772567615'
+  maxkb:ggo6ik:
+    baseUrl: http://127.0.0.1:8080/api/application/e1aefd00-b6ce-11ef-8c11-0242ac110004
+    apikey: application-d06d94eb9d661e36e451d1eaf58b6856
+    keyword: ^pxq
+    privateChatTrigger: false
+    $filter:
+      $or:
+        - $eq:
+            - $: guildId
+            - '865182188'
+        - $eq:
+            - $: guildId
+            - '1012656128'
+    atTrigger: false

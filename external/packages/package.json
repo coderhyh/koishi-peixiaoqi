@@ -20,7 +20,8 @@
   "peerDependencies": {
     "axios": "1.7.7",
     "jimp": "^0.22.12",
-    "koishi": "^4.17.9"
+    "koishi": "^4.17.9",
+    "koishi-plugin-markdown": "^4.17.9"
   },
   "koishi": {
     "description": {

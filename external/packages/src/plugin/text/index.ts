@@ -36,6 +36,12 @@ export default function (ctx: Context) {
     })
   ctx.command('tb')
     .action(async ({ session }) => 'tb已禁用')
+  ctx.command('我压力好大啊')
+    .action(async ({ session }) => '压力哥又开始了')
+  ctx.guild('996360093', '796522033').command('爱国')
+    .action(async ({ session }) => '谁又不爱国了')
+  ctx.guild('996360093', '796522033').command('赢')
+    .action(async ({ session }) => '不是不赢  是缓赢 慢赢 有次序  有调节的赢 从高数量的赢到高质量的赢 努力实现先赢带动后赢 实现共同赢')
   ctx.command('骂 <at>', '示例：骂 @某人')
     .action(async ({ session }, user) => {
       const self = session.event.user.id

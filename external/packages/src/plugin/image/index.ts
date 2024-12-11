@@ -193,11 +193,12 @@ export default function (ctx: Context) {
     .action(async ({ session }) => {
       return h.image('http://api.yujn.cn/api/moyu.php?msg=摸鱼日报&type=image')
     })
-  ctx.command('我家哥哥').alias('哥哥', '好哥哥', '鸡哥', '坤坤', '小黑子', '坤', 'ikun')
-    .action(async ({ session }) => {
-      return h.image('http://api.yujn.cn/api/cxk.php?')
-    })
-
+  ctx.on('message', (session) => {
+    const kun = ['哥哥', '鸡哥', '小黑子', '坤', 'kun']
+    if (kun.some(e => session.content.includes(e))) {
+      session.send(h.image('http://api.yujn.cn/api/cxk.php?'))
+    }
+  })
   // ctx.command('造谣')
   //   .action(async ({ session }) => {
   //     session.onebot.sendGroupForwardMsg(session.guildId, [

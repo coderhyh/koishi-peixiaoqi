@@ -7,15 +7,33 @@ import text from './plugin/text'
 import task from './plugin/task'
 import roastChiken from './plugin/roastChiken'
 import watermark from './plugin/watermark'
+import maxkb from './plugin/maxkb'
 
 export const name = 'hyh'
 
 export interface Config { }
 
+export const inject = ['database']
+
 export const Config: Schema<Config> = Schema.object({})
+
+export interface MaxKBChat {
+  id: string;
+  chatId: string;
+}
+
+declare module "koishi" {
+  interface Tables {
+    maxkb: MaxKBChat;
+  }
+}
 
 // const pluginFilenames = fs.readdirSync(__dirname + '/plugin').filter(e => e !== '.DS_Store')
 export function apply(ctx: Context) {
+  ctx.model.extend("maxkb", {
+    id: "string",
+    chatId: "string",
+  });
   // ctx.database.remove('message_counter_records' as any, {
   //   channelId: '978642752'
   // })
@@ -58,4 +76,5 @@ export function apply(ctx: Context) {
   task(ctx)
   roastChiken(ctx)
   watermark(ctx)
+  maxkb(ctx)
 }
